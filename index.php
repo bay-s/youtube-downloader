@@ -71,17 +71,16 @@ function convertSampleRateToKbps($sampleRate) {
   return $kbps;
 }
 
-
-var_dump($audio);
+ 
 ?>
 
 <?php require_once "./views/header.php"; ?>
 
 <main class="container lg:px-40 my-6 flex flex-col gap-6 h-screen">
  
-<form action="" method="post" class="flex flex-col gap-4 rounded-md bg-white border p-3" >
-<h1 class="font-bold text-3xl">Download Video and Audio from YouTube</h1>  
-<div class="mb-4 flex items-center border-4 rounded-md border-blue-500 ">
+<form action="" method="post" class="flex flex-col gap-5 rounded-md bg-white border p-5" >
+<h1 class="font-bold text-3xl text-center">Download Video and Audio from YouTube</h1>  
+<div class="mb-4 flex items-center border-4 rounded-md border-blue-500 mx-20">
         <input
           name="url"
           type="text"
@@ -115,7 +114,6 @@ var_dump($audio);
     <img src="<?php echo $videoDetail['thumb'][count($videoDetail['thumb']) - 1]['url'] ?>" class="object-contain h-64  w-full rounded-sm" alt="">
   </figure>
   <h3 class="font-bold text-1xl"><?php echo $videoDetail['title'] ?></h3>
- 
   </article>
   <!-- end left col -->
   <!-- START RIGHT COL -->
