@@ -7,19 +7,19 @@ require_once __DIR__ . "/../app/init.php";
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>YT DOWNLOADER</title>
+    <title>Simple YT-Downloader - Download video and audio from youtube easily</title>
     <link href="<?php echo $root ?>public/css/style.css" rel="stylesheet">
     <link href="<?php echo $root ?>public/css/tailwind.min.css" rel="stylesheet">
 </head>
 <body>
     
  
-<header class="bg-white">
+<header class="bg-white sticky top-0 z-10">
   <div class="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
     <div class="flex h-16 items-center justify-between lg:px-36">
       <div class="flex-1 md:flex md:items-center md:gap-12">
-        <a class=" text-teal-600 font-bold text-2xl" href="/">
-        YT - Downloader
+        <a class=" text-teal-600 font-bold text-2xl" href="index.php">
+         Simple YT-Downloader
         </a>
       </div>
 
@@ -29,7 +29,7 @@ require_once __DIR__ . "/../app/init.php";
             <li>
               <a
                 class="text-gray-500 transition hover:text-gray-500/75"
-                href="/"
+                href="#"
               >
               Download Video
               </a>
@@ -37,7 +37,7 @@ require_once __DIR__ . "/../app/init.php";
             <li>
               <a
                 class="text-gray-500 transition hover:text-gray-500/75"
-                href="/"
+                href="#"
               >
               Download Audio
               </a>

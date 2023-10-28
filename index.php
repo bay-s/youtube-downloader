@@ -76,40 +76,32 @@ function convertSampleRateToKbps($sampleRate) {
 
 <?php require_once "./views/header.php"; ?>
 
-<main class="container lg:px-40 my-6 flex flex-col gap-6 h-screen">
+<main class="container mx-auto lg:px-40 my-6 flex flex-col gap-6 min-h-screen">
  
-<form action="" method="post" class="flex flex-col gap-5 rounded-md bg-white border p-5" >
-<h1 class="font-bold text-3xl text-center">Download Video and Audio from YouTube</h1>  
-<div class="mb-4 flex items-center border-4 rounded-md border-blue-500 mx-20">
+<form action="" method="post" class="flex flex-col gap-5 rounded-md bg-white border p-2 sm:p-5" >
+<h1 class="font-bold text-xl sm:text-3xl text-center">Download Video and Audio from YouTube</h1>  
+<div class="mb-4 flex items-center border-4 rounded-md border-blue-500 mx-2 sm:mx-20">
         <input
           name="url"
           type="text"
-          class="w-full rounded-lg outline-none  p-4 pe-12 text-sm shadow-sm   "
+          class="w-full rounded-lg outline-none p-2 sm:p-4 pe-12 text-sm shadow-sm"
           placeholder="Enter url"
           required
         />
-  <button name="get-url" type="submit" class="inline-block rounded border border-indigo-500 bg-indigo-500 px-12 py-4 text-sm font-medium text-white  focus:outline-none focus:ring active:text-indigo-500 whitespace-nowrap hover:bg-indigo-600">
+ <button name="get-url" type="submit" class="inline-block rounded border border-indigo-500 bg-indigo-500 px-6 sm:px-12 py-2.5 sm:py-4 text-sm font-medium text-white  focus:outline-none focus:ring active:text-indigo-500 whitespace-nowrap hover:bg-indigo-600">
     Get Video
 </button>
 </div>
 </form>
  
 <!-- ERROR -->
-<?php if(!empty($Exception)) { ?>
-  <?php if($Exception['error']) { ?>
-<div role="alert" class="rounded border-s-4 border-red-500 bg-red-50 p-4">
-  <p class="mt-2 text-sm text-red-700 font-bold">
-  <?php echo $Exception['message'] ?>
-  </p>
-</div>
-    <?php } ?>
-<?php }  ?> 
+<?php require_once "./views/error-message.php"; ?>
 <!-- END ERROR MESSAGE -->
 
 <?php if(!empty($videoDetail)){?>
-<section class="grid gap-5 grid-cols-2 p-4">
+<section class="grid sm:gap-5 gap-10 grid-cols-2 p-4">
   <!-- STAR LEFT COL -->
-  <article class="col-span-1 flex flex-col gap-4">
+  <article class="col-span-2 sm:col-span-1 flex flex-col gap-4">
     <figure class="h-64 rounded bg-black">
     <img src="<?php echo $videoDetail['thumb'][count($videoDetail['thumb']) - 1]['url'] ?>" class="object-contain h-64  w-full rounded-sm" alt="">
   </figure>
@@ -117,7 +109,7 @@ function convertSampleRateToKbps($sampleRate) {
   </article>
   <!-- end left col -->
   <!-- START RIGHT COL -->
-<article class="col-span-1">
+<article class="col-span-2 sm:col-span-1">
 
 <!-- TABS -->
 <div class="hidden sm:block mb-6">
@@ -149,7 +141,7 @@ function convertSampleRateToKbps($sampleRate) {
 <div class="flex flex-col gap-5 hidden fade" id="audio">
 <?php require_once "./views/audio.php"; ?>
 </div>
-  </article>
+ </article>
     <!-- END RIGHT COL -->
 </section>
 <?php } ?>
